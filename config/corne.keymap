@@ -10,7 +10,7 @@
 #include <dt-bindings/zmk/rgb.h>
 
 &led_strip {
-    chain-length = <21>;
+    chain-length = <27>;
 
     // 21 backlight + 6 glowlight
 };
@@ -26,7 +26,7 @@
             // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
-            bindings = <
+            bindings = < &rgb_ug_white
 &kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
 &kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
@@ -83,17 +83,12 @@
         };
     };
 
-    behaviors {
+   behaviors {
         rgb_ug_white: rgb_ug_white {
             compatible = "zmk,behavior-rgb-underglow";
             #binding-cells = <0>;
             label = "RGB_UG_WHITE";
             bindings = <&rgb_ug RGB_HUE 0>, <&rgb_ug RGB_SAT 0>, <&rgb_ug RGB_VAL 100>;
         };
-    };
-
-    init_white {
-        compatible = "zmk,init";
-        init = <&rgb_ug_white>;
     };
 };
