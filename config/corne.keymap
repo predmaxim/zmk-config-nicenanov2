@@ -10,7 +10,7 @@
 #include <dt-bindings/zmk/rgb.h>
 
 &led_strip {
-    chain-length = <27>;
+    chain-length = <21>;
 
     // 21 backlight + 6 glowlight
 };
@@ -80,17 +80,6 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans  &trans  &trans
             >;
-        };
-    };
-
-   behaviors {
-        rgb_ug_white: rgb_ug_white {
-            compatible = "zmk,behavior-rgb-underglow";
-            #binding-cells = <0>;
-            label = "RGB_UG_WHITE";
-            bindings = <&rgb_ug RGB_HUE 0>;
-            bindings = <&rgb_ug RGB_SAT 0>;
-            bindings = <&rgb_ug RGB_VAL 100>;
         };
     };
 };
