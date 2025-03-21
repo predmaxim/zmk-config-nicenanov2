@@ -88,7 +88,9 @@
             compatible = "zmk,behavior-rgb-underglow";
             #binding-cells = <0>;
             label = "RGB_UG_WHITE";
-            bindings = <&rgb_ug RGB_HUE 0>, <&rgb_ug RGB_SAT 0>, <&rgb_ug RGB_VAL 100>;
+            bindings = <&rgb_ug RGB_HUE 0>;
+            bindings = <&rgb_ug RGB_SAT 0>;
+            bindings = <&rgb_ug RGB_VAL 100>;
         };
     };
 };
